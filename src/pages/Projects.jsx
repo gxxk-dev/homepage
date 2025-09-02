@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import AnimatedBackground from '../components/AnimatedBackground'
+import Footer from '../components/Footer'
 import './Projects.css'
 const Projects = () => {
   const [openDropdown, setOpenDropdown] = useState(null)
@@ -149,33 +150,7 @@ const Projects = () => {
         </div>
       </main>
 
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-left">
-              <div className="footer-profile">
-                <img className='footer-avatar' src="//assets.frez79.io/site-icon/frez-white.svg"/>
-                <div className="footer-info">
-                  <h3>Frez79</h3>
-                  <p>初三生 / 全栈 / Android刷机 / ACGN</p>
-                  <small>[Frez79.io] AGPL v3+ (By Frez79)</small>
-                </div>
-              </div>
-            </div>
-            
-            <div className="footer-right">
-              <div className="footer-links">
-                <div className="link-section">
-                  <h4>Find Me At:</h4>
-                  <a href="https://re.frez79.io" target="_blank" rel="noopener noreferrer">Blog</a>
-                  <a href="https://github.com/gxxk-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a href="https://linux.do/u/frez79" target="_blank" rel="noopener noreferrer">LINUX DO</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
