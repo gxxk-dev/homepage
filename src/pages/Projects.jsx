@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import AnimatedBackground from '../components/AnimatedBackground'
 import './Projects.css'
 const Projects = () => {
+  const [openDropdown, setOpenDropdown] = useState(null)
+
+  const toggleDropdown = (projectId) => {
+    setOpenDropdown(openDropdown === projectId ? null : projectId)
+  }
   const myProjects = [
     {
       id: 1,
@@ -65,53 +71,111 @@ const Projects = () => {
         <Link to="/" className="back-link">← 返回首页</Link>
       </div>
       
-      <div className="container">
-        <header className="projects-header">
-          <h1>My Projects</h1>
-          <p>我的个人项目展示</p>
-        </header>
+      <main className="main-content">
+        <div className="container">
+          <header className="projects-header">
+            <h1>My Projects</h1>
+            <p>存档Frez79曾经写过的项目.</p>
+          </header>
 
-        <section className="projects-section">
-          <div className="projects-list">
-            {myProjects.map((project) => (
-              <div key={project.id} className="project-item">
-                <div className="project-content">
-                  <div className="project-main">
-                    <div className="project-title-row">
-                      <h3>{project.name}</h3>
+          <section className="projects-section">
+            <div className="projects-list">
+              {myProjects.map((project) => (
+                <div key={project.id} className="project-item">
+                  <div className="project-header">
+                    <button 
+                      className="mobile-dropdown-toggle"
+                      onClick={() => toggleDropdown(project.id)}
+                      aria-label="展开选项"
+                    >
+                      <span className={`triangle ${openDropdown === project.id ? 'open' : ''}`}>▼</span>
+                    </button>
+                  </div>
+                  <div className="project-content">
+                    <div className="project-main">
+                      <div className="project-title-row">
+                        <h3>{project.name}</h3>
+                      </div>
+                      <p className="project-description">{project.description}</p>
+                      <div className="tech-stack">
+                        {project.tech.map(tech => (
+                          <span key={tech} className="tech-tag">{tech}</span>
+                        ))}
+                      </div>
                     </div>
-                    <p className="project-description">{project.description}</p>
-                    <div className="tech-stack">
-                      {project.tech.map(tech => (
-                        <span key={tech} className="tech-tag">{tech}</span>
-                      ))}
+                    <div className="project-actions">
+                      <div className="action-buttons desktop-buttons">
+                        {project.demo && (
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-demo">
+                            Demo
+                          </a>
+                        )}
+                        {project.blog && (
+                          <a href={project.blog} target="_blank" rel="noopener noreferrer" className="btn btn-blog-link">
+                            Blog
+                          </a>
+                        )}
+                        {project.github && project.github !== '#' && (
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-source">
+                            Source
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className="project-actions">
-                    <div className="action-buttons">
+                  {openDropdown === project.id && (
+                    <div className="mobile-dropdown">
                       {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-demo">
-                          Demo
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="dropdown-link">
+                          📱 Demo
                         </a>
                       )}
                       {project.blog && (
-                        <a href={project.blog} target="_blank" rel="noopener noreferrer" className="btn btn-blog-link">
-                          Blog
+                        <a href={project.blog} target="_blank" rel="noopener noreferrer" className="dropdown-link">
+                          📖 Blog
                         </a>
                       )}
                       {project.github && project.github !== '#' && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-source">
-                          Source
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="dropdown-link">
+                          💻 Source
                         </a>
                       )}
                     </div>
-                  </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-left">
+              <div className="footer-profile">
+                <img className='footer-avatar' src="//assets.frez79.io/site-icon/frez-white.svg"/>
+                <div className="footer-info">
+                  <h3>Frez79</h3>
+                  <p>初三生 / 全栈 / Android刷机 / ACGN</p>
+                  <small>[Frez79.io] AGPL v3+ (By Frez79)</small>
                 </div>
               </div>
-            ))}
+            </div>
+            
+            <div className="footer-right">
+              <div className="footer-links">
+                <div className="link-section">
+                  <h4>Find Me At:</h4>
+                  <a href="https://re.frez79.io" target="_blank" rel="noopener noreferrer">Blog</a>
+                  <a href="https://github.com/gxxk-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href="https://linux.do/u/frez79" target="_blank" rel="noopener noreferrer">LINUX DO</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </footer>
     </div>
   )
 }
