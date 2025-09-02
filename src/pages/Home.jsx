@@ -31,7 +31,7 @@ const Home = () => {
               Frez79
             </h1>
             <p className="subtitle">
-              <TypeWriter text="Welcome to My World." speed={80} />
+              <TypeWriter text="the Pulse of Edge Nodes." speed={90} />
             </p>
             <div className="action-buttons">
               <a 
@@ -50,10 +50,10 @@ const Home = () => {
           <div className="footer-content">
             <div className="footer-left">
               <div className="footer-profile">
-                <div className="footer-avatar">F79</div>
+                <img className='footer-avatar' src="//assets.frez79.io/site-icon/frez-white.svg"/>
                 <div className="footer-info">
                   <h3>Frez79</h3>
-                  <p>学生 / 全栈 / Android刷机 / ACGN</p>
+                  <p>初三生 / 全栈 / Android刷机 / ACGN</p>
                   <small>[Frez79.io] AGPL v3+ (By Frez79)</small>
                 </div>
               </div>

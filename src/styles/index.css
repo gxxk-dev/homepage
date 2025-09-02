@@ -9,6 +9,12 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
+@media (max-width: 1024px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
 @media (max-width: 768px) {
   html {
     scroll-padding-top: 80px;
@@ -27,6 +33,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -35,8 +48,19 @@ body {
   }
 }
 
-/* Very small screens */
-@media (max-width: 320px) {
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 414px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
   body {
     font-size: 14px;
   }
@@ -49,7 +73,13 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -61,6 +91,18 @@ body {
 @media (max-width: 480px) {
   .container {
     padding: 0 12px;
+  }
+}
+
+@media (max-width: 414px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 8px;
   }
 }
 
@@ -106,22 +148,58 @@ body {
 .btn {
   padding: 12px 24px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  min-height: 44px;
-  min-width: 44px;
+  min-height: 48px;
+  min-width: 48px;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    min-height: 48px;
+    min-width: 48px;
+  }
 }
 
 @media (max-width: 768px) {
   .btn {
     padding: 14px 28px;
     font-size: 16px;
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 16px 32px;
+    font-size: 16px;
+    min-height: 52px;
+    min-width: 52px;
+  }
+}
+
+@media (max-width: 414px) {
+  .btn {
+    padding: 16px 30px;
+    font-size: 15px;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .btn {
+    padding: 14px 28px;
+    font-size: 14px;
     min-height: 48px;
   }
 }
