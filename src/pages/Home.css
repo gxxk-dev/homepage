@@ -143,42 +143,6 @@
   }
 }
 
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .btn-blog {
-    padding: 16px 32px;
-    font-size: 0.95rem;
-    width: 100%;
-    max-width: 280px;
-  }
-  
-  .footer-links {
-    flex-direction: column;
-    gap: 0.25rem;
-    text-align: left;
-  }
-  
-  .footer-profile {
-    flex-direction: row;
-    text-align: left;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-    align-items: center;
-  }
-}
 
 @media (max-width: 414px) {
   .main-title {

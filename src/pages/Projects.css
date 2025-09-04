@@ -100,6 +100,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
+  padding-bottom: 0.6rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
   display: flex;
@@ -570,14 +571,7 @@
   .project-content {
     gap: 1.25rem;
   }
-  
-  .action-buttons {
-    display: none;
-  }
 
-  .btn-source, .btn-demo, .btn-blog-link {
-    display: none;
-  }
 
   .other-projects-section {
     margin-top: 2rem;
