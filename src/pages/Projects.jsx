@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import AnimatedBackground from '../components/AnimatedBackground'
 import Footer from '../components/Footer'
+import ProjectCard from '../components/ProjectCard'
 import './Projects.css'
 const Projects = () => {
   const [openDropdown, setOpenDropdown] = useState(null)
@@ -82,68 +83,12 @@ const Projects = () => {
           <section className="projects-section">
             <div className="projects-list">
               {myProjects.map((project) => (
-                <div key={project.id} className="project-item">
-                  <div className="project-header">
-                    <button 
-                      className="mobile-dropdown-toggle"
-                      onClick={() => toggleDropdown(project.id)}
-                      aria-label="展开选项"
-                    >
-                      <span className={`triangle ${openDropdown === project.id ? 'open' : ''}`}>▼</span>
-                    </button>
-                  </div>
-                  <div className="project-content">
-                    <div className="project-main">
-                      <div className="project-title-row">
-                        <h3>{project.name}</h3>
-                      </div>
-                      <p className="project-description">{project.description}</p>
-                      <div className="tech-stack">
-                        {project.tech.map(tech => (
-                          <span key={tech} className="tech-tag">{tech}</span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="project-actions">
-                      <div className="action-buttons desktop-buttons">
-                        {project.demo && (
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-demo">
-                            Demo
-                          </a>
-                        )}
-                        {project.blog && (
-                          <a href={project.blog} target="_blank" rel="noopener noreferrer" className="btn btn-blog-link">
-                            Blog
-                          </a>
-                        )}
-                        {project.github && project.github !== '#' && (
-                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-source">
-                            Source
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                  {openDropdown === project.id && (
-                    <div className="mobile-dropdown">
-                      {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="dropdown-link">
-                          📱 Demo
-                        </a>
-                      )}
-                      {project.blog && (
-                        <a href={project.blog} target="_blank" rel="noopener noreferrer" className="dropdown-link">
-                          📖 Blog
-                        </a>
-                      )}
-                      {project.github && project.github !== '#' && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="dropdown-link">
-                          💻 Source
-                        </a>
-                      )}
-                    </div>
-                  )}
-                </div>
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  isOpen={openDropdown === project.id}
+                  onToggleDropdown={() => toggleDropdown(project.id)}
+                />
               ))}
             </div>
           </section>

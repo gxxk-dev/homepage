@@ -1,0 +1,63 @@
+/* Badge Component Styles */
+.badge {
+  display: inline-block;
+  border-radius: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Badge Sizes */
+.badge--small {
+  padding: 2px 8px;
+  font-size: 0.65rem;
+  border-radius: 12px;
+}
+
+.badge--medium {
+  padding: 4px 12px;
+  font-size: 0.75rem;
+}
+
+.badge--large {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+}
+
+/* Badge Hover Effect */
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Badge Animation */
+.badge--animated {
+  animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .badge--medium {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .badge--large {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
+}

@@ -23,6 +23,12 @@ const Home = () => {
               >
                 My Projects
               </a>
+              <a 
+                href="/log" 
+                className="btn btn-blog"
+              >
+                My Log
+              </a>
             </div>
           </div>
         </div>

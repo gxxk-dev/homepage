@@ -4,6 +4,13 @@
   flex-direction: column;
 }
 
+/* Desktop only - Add padding to prevent content overlap with fixed footer */
+@media (min-width: 1024px) {
+  .home {
+    padding-bottom: 200px; /* Adjust based on footer height */
+  }
+}
+
 .main-content {
   flex: 1;
   display: flex;
